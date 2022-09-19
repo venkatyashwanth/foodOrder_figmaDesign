@@ -3,20 +3,16 @@ import "./index.css";
 import { Container, Row, Col } from "react-bootstrap";
 
 import TrendingFood from "../TrendingFood";
-// import NavigationBar from "../NavigationBar";
-//ImCart
+import PopularItems from "../PopularItems";
 
 const LandingPage = () => {
   return (
     <>
-      {/* Navigation Bar */}
-      {/* <NavigationBar/> */}
-
       {/* empty space */}
       <div style={{height: "120px"}}>
 
       </div>
-      {/* Hero Container */}
+      {/* Hero Container Section */}
       <Container fluid>
         <Row>
           <Col xl={5} className="d-flex flex-column justify-content-center">
@@ -118,8 +114,14 @@ const LandingPage = () => {
           </Col>
         </Row>
       </Container>
+
+      {/* Trending Food Section */}
       <TrendingFood />
-      
+
+      {/* Popular Items Section */}
+      <PopularItems/>
+
+
     </>
   );
 };

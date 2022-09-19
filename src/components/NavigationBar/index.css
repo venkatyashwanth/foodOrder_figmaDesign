@@ -34,7 +34,7 @@
     .searchBox::after{
         content: '';
         position: absolute;
-        right: 28%;
+        right: 10%;
         background-color: #948C8CB3;
         height: 70%;
         width: 1px;
@@ -195,3 +195,7 @@
     font-size: 18px;
     color: #909090;
 }
+
+.active {
+    background: green;
+  }

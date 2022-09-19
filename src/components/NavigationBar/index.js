@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector,useDispatch } from "react-redux";
 import "./index.css";
 import { Container } from "react-bootstrap";
@@ -11,6 +11,7 @@ import Badge from "react-bootstrap/Badge";
 import { getTotals } from "../../features/addToCart/cartSlice";
 
 const NavigationBar = () => {
+  const [activeTab, setActiveTab] = useState("link1");
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cart);
   
@@ -20,6 +21,13 @@ const NavigationBar = () => {
   useEffect(()=> {
     dispatch(getTotals());
   },[cart])
+
+  const activeClassLink1 = activeTab === "link1" ? "active" : "";
+  const activeClassLink2 = activeTab === "link2" ? "active" : "";
+  const activeClassLink3 = activeTab === "link3" ? "active" : "";
+  const activeClassLink4 = activeTab === "link4" ? "active" : "";
+
+
 
   return (
     <>
@@ -40,10 +48,10 @@ const NavigationBar = () => {
             className="order-3 order-lg-1"
           >
             <Nav className="navigationLinks m-auto">
-              <Nav.Link>Home</Nav.Link>
-              <Nav.Link>Menu</Nav.Link>
-              <Nav.Link>Contact</Nav.Link>
-              <Nav.Link>Shop</Nav.Link>
+              <Nav.Link className={`nav-link ${activeClassLink1}`} onClick={() => setActiveTab("link1")}>Home</Nav.Link>
+              <Nav.Link className={`nav-link ${activeClassLink2}`} onClick={() => setActiveTab("link2")}>Menu</Nav.Link>
+              <Nav.Link className={`nav-link ${activeClassLink3}`} onClick={() => setActiveTab("link3")}>Contact</Nav.Link>
+              <Nav.Link className={`nav-link ${activeClassLink4}`} onClick={() => setActiveTab("link4")}>Shop</Nav.Link>
             </Nav>
           </Navbar.Collapse>
 

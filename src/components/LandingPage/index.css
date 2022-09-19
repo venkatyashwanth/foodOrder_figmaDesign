@@ -118,6 +118,12 @@
     border: none;
 }
 
+.buttonContainer .orderButton:hover{
+    color: #2F2F2F;
+    background-color: white;
+    transition: 0.8s;
+}
+
 @media (max-width: 576px){
     .buttonContainer .orderButton{
         font-size: 18px;
