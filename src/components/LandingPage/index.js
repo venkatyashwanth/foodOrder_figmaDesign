@@ -4,14 +4,14 @@ import { Container, Row, Col } from "react-bootstrap";
 
 import TrendingFood from "../TrendingFood";
 import PopularItems from "../PopularItems";
+import ContactUs from "../ContactUs";
+import FooterSection from "../FooterSection";
 
 const LandingPage = () => {
   return (
     <>
       {/* empty space */}
-      <div style={{height: "120px"}}>
-
-      </div>
+      <div style={{ height: "120px" }}></div>
       {/* Hero Container Section */}
       <Container fluid>
         <Row>
@@ -113,15 +113,19 @@ const LandingPage = () => {
             </div>
           </Col>
         </Row>
+        
       </Container>
 
       {/* Trending Food Section */}
       <TrendingFood />
-
       {/* Popular Items Section */}
       <PopularItems/>
 
+      {/* Contact Us Section */}
+      <ContactUs/>
 
+      {/* Footer section */}
+      <FooterSection/>
     </>
   );
 };

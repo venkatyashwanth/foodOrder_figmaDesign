@@ -9,7 +9,6 @@ const PopularItems = () => {
   const dispatch = useDispatch();
   const [popular, setPopular] = useState([]);
 
-  const [indCartItem, setIndCartItem] = useState(0);
 
   const getPopular = async () => {
     const check = localStorage.getItem("popular");
@@ -101,9 +100,6 @@ const PopularItems = () => {
             ))}
           </div>
           </Col>
-        </Row>
-        <Row>
-            <h1>Hello</h1>
         </Row>
       </Container>
     </>

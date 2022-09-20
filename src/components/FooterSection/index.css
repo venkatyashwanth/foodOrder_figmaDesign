@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+
+.footerBackgroundContainer{
+    background-color:#1E2833;
+    padding: 50px;
+}
+
+
+
+.imageContainer{
+    border-bottom: 1px solid #ffffff1A;
+}
+
+.imageStyle{
+    width: 42px;
+    height: 35px;
+    margin-bottom: 48px;
+}
+
+.subscribeHead{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #ffffff;
+    line-height: 28px;
+    letter-spacing: -0.3px;
+    width: 172px;
+    margin-top: 44px;
+}
+
+.emailSentSection input:focus{
+    box-shadow: none !important;
+    border: 0px;
+}
+
+.emailSentBtn{
+    /* padding: 18px; */
+    padding: 18px 22px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FFD2DD;
+    border: 0px;
+}
+
+.emailSentBtn img{
+    width: 6px;
+    height: 10px;
+}
+
+.ServicesList{
+    list-style-type: none;
+    margin-top: 46px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.ServicesList li{
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.ServicesList li:first-child{
+    color: #FFD2DD
+}
+
+.AboutList{
+    list-style-type: none;
+    margin-top: 46px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.AboutList li{
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.AboutList li:first-child{
+    color: #FFD2DD
+}
+
+.BottomText p:first-child{
+    margin-right: 40px;
+}
+
+.BottomText p{
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.logoContainer i{
+    cursor: pointer;
+}
+
+.logoContainer i:not(i:last-child){
+    margin-right: 20px;
+}
+
+@media (max-width: 576px){
+    .logoContainer{
+        text-align: center;
+    }
+}

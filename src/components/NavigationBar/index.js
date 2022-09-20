@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import "./index.css";
 import { Container } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
@@ -12,22 +12,19 @@ import { getTotals } from "../../features/addToCart/cartSlice";
 
 const NavigationBar = () => {
   const [activeTab, setActiveTab] = useState("link1");
-  const dispatch = useDispatch()
-  const cart = useSelector(state => state.cart);
-  
+  const dispatch = useDispatch();
+  // const cart = useSelector((state) => state.cart);
+
   const orderQuantity = useSelector((state) => state.cart.cartTotalQuantity);
 
-
-  useEffect(()=> {
+  useEffect(() => {
     dispatch(getTotals());
-  },[cart])
+  });
 
   const activeClassLink1 = activeTab === "link1" ? "active" : "";
   const activeClassLink2 = activeTab === "link2" ? "active" : "";
   const activeClassLink3 = activeTab === "link3" ? "active" : "";
   const activeClassLink4 = activeTab === "link4" ? "active" : "";
-
-
 
   return (
     <>
@@ -35,7 +32,7 @@ const NavigationBar = () => {
         fixed="top"
         collapseOnSelect
         expand="lg"
-        className="navigationBarBg"
+        className="navigationBarBg shadow-sm"
       >
         <Container fluid>
           <Navbar.Brand className="d-none d-md-flex align-items-baseline">
@@ -48,10 +45,24 @@ const NavigationBar = () => {
             className="order-3 order-lg-1"
           >
             <Nav className="navigationLinks m-auto">
-              <Nav.Link className={`nav-link ${activeClassLink1}`} onClick={() => setActiveTab("link1")}>Home</Nav.Link>
-              <Nav.Link className={`nav-link ${activeClassLink2}`} onClick={() => setActiveTab("link2")}>Menu</Nav.Link>
-              <Nav.Link className={`nav-link ${activeClassLink3}`} onClick={() => setActiveTab("link3")}>Contact</Nav.Link>
-              <Nav.Link className={`nav-link ${activeClassLink4}`} onClick={() => setActiveTab("link4")}>Shop</Nav.Link>
+              <Nav.Link onClick={() => setActiveTab("link1")}>
+                <span className={`d-inline-block ${activeClassLink1}`}>Home</span>
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => setActiveTab("link2")}
+              >
+                <span className={`d-inline-block ${activeClassLink2}`}>Menu</span>
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => setActiveTab("link3")}
+              >
+                <span className={`d-inline-block ${activeClassLink3}`}>Contact</span>
+              </Nav.Link>
+              <Nav.Link
+                onClick={() => setActiveTab("link4")}
+              >
+                <span className={`d-inline-block ${activeClassLink4}`}>Shop</span>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
 

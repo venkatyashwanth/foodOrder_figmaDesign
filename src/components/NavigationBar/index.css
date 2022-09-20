@@ -1,201 +1,212 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-.chefHatImg{
-    width: 32px;
-    height: 32px;
-    margin-right: 4px;
+.chefHatImg {
+  width: 32px;
+  height: 32px;
+  margin-right: 4px;
 }
 
-.container-fluid{
-    /* width: 90% !important; */
-    padding-top: 20px;
+.container-fluid {
+  /* width: 90% !important; */
+  padding-top: 20px;
 }
 
-.navigationBarBg{
-    background-color: #f4ece1;
+.navigationBarBg {
+  background-color: #f4ece1;
 }
 
 .navbar-brand {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
 }
 
-.searchBox{
-    padding: 8px;
-    padding-left: 30px;
-    position: relative;
+.searchBox {
+  padding: 8px;
+  padding-left: 30px;
+  position: relative;
 }
 
-
-
-@media screen and (min-width: 576px){
-    .searchBox::after{
-        content: '';
-        position: absolute;
-        right: 10%;
-        background-color: #948C8CB3;
-        height: 70%;
-        width: 1px;
-    }
-}
-
-.searchBox input:focus{
-    box-shadow: none !important;
-}
-
-
-@media screen and (max-width: 767px){
-    .searchMenu{
-        width: 100%;
-    }
-}
-
-.navigationLinks a{
-    color: black !important;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 52px;
-    font-size: 22px;
-}
-
-@media screen and (max-width: 992px){
-    .navigationLinks a{
-        margin-left: 12px;
-        font-size: 16px;
-    }
-}
-
-.heroText .ht1{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 125px;
-    color: #FF7E00;
-}
-
-
-
-.heroText .ht2{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 52px;
-    margin-left: 18px;
-    line-height: 95%;
-}
-
-@media (max-width: 576px){
-    .heroText .ht1{
-        font-weight: 700;
-        font-size: 56px;
-        text-align: center;
-    }
-    .heroText .ht2{
-        font-weight: 700;
-        font-size: 28px;
-    }
-}
-
-.subText h2{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    width: 90%;
-}
-
-@media (max-width: 576px){
-    .subText h2{
-        font-size: 18px;
-        text-align: center;
-    }
-}
-
-.buttonContainer .orderButton{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
-    padding: 25px 40px;
-    color: white;
-    background-color: #2F2F2F;
-    border: none;
-}
-
-@media (max-width: 576px){
-    .buttonContainer .orderButton{
-        font-size: 18px;
-        padding: 12px 20px;
-        margin-bottom: 10px;
-    }
-}
-
-.buttonContainer .playButton{
-    margin-left: 20px;
-    width: 72px;
-    height: 72px;
-    background-color: #FFF8F0;
-    border-radius: 50%;
-    position: relative;
-}
-
-.buttonContainer .playButton span{
+@media screen and (min-width: 576px) {
+  .searchBox::after {
+    content: "";
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    
+    right: 10%;
+    background-color: #948c8cb3;
+    height: 70%;
+    width: 1px;
+  }
 }
 
-
-
-
-.buttonContainer .playTextButton{
-    cursor: pointer;
+.searchBox input:focus {
+  box-shadow: none !important;
 }
 
-.playTextButton .playText{
-    color: #2F2F2F;
-    padding-left: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 20px;
+@media screen and (max-width: 767px) {
+  .searchMenu {
+    width: 100%;
+  }
 }
 
-.playButton img{
-    width: 21px;
-    height: 21px;
+.navigationLinks a {
+  color: black !important;
+  font-family: "Poppins", sans-serif;
+  margin-left: 52px;
+  font-size: 22px;
 }
 
-@media (max-width: 576px){
-    .buttonContainer .playButton{
-        margin-left: 0px;
-        width: 42px;
-        height: 42px;
-    }
-
-    .playTextButton .playText{
-        padding-left: 10px;
-        font-size: 12px;
-    }
-
-    .playButton img{
-        width: 12px;
-        height: 12px;
-    }
-    
+@media screen and (max-width: 992px) {
+  .navigationLinks a {
+    margin-left: 12px;
+    font-size: 16px;
+  }
 }
 
-
-
-.starRatingBox span{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+.heroText .ht1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 125px;
+  color: #ff7e00;
 }
 
-.starRatingBox p{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+.heroText .ht2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  margin-left: 18px;
+  line-height: 95%;
+}
+
+@media (max-width: 576px) {
+  .heroText .ht1 {
+    font-weight: 700;
+    font-size: 56px;
+    text-align: center;
+  }
+  .heroText .ht2 {
+    font-weight: 700;
+    font-size: 28px;
+  }
+}
+
+.subText h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  width: 90%;
+}
+
+@media (max-width: 576px) {
+  .subText h2 {
     font-size: 18px;
-    color: #909090;
+    text-align: center;
+  }
+}
+
+.buttonContainer .orderButton {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 25px 40px;
+  color: white;
+  background-color: #2f2f2f;
+  border: none;
+}
+
+@media (max-width: 576px) {
+  .buttonContainer .orderButton {
+    font-size: 18px;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.buttonContainer .playButton {
+  margin-left: 20px;
+  width: 72px;
+  height: 72px;
+  background-color: #fff8f0;
+  border-radius: 50%;
+  position: relative;
+}
+
+.buttonContainer .playButton span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.buttonContainer .playTextButton {
+  cursor: pointer;
+}
+
+.playTextButton .playText {
+  color: #2f2f2f;
+  padding-left: 10px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.playButton img {
+  width: 21px;
+  height: 21px;
+}
+
+@media (max-width: 576px) {
+  .buttonContainer .playButton {
+    margin-left: 0px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .playTextButton .playText {
+    padding-left: 10px;
+    font-size: 12px;
+  }
+
+  .playButton img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.starRatingBox span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.starRatingBox p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #909090;
 }
 
 .active {
-    background: green;
+  position: relative;
+}
+
+.active::before {
+  position: absolute;
+  content: "";
+  background-color: #FF7E00;
+  height: 3px;
+  width: 100%;
+  bottom: -5px;
+  left: 0px;
+  animation-name: variableWidth;
+  animation-duration: 0.3s;
+}
+
+@keyframes variableWidth {
+  from {
+    bottom: 0;
+    /* width: 0%; */
   }
+  to {
+    bottom: -5px;
+    /* width: 100%; */
+  }
+}
