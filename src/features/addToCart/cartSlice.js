@@ -3,7 +3,9 @@ import { toast } from "react-toastify";
 
 const initialState = {
   cartTotalQuantity: 0,
-  cartItems: [],
+  cartTotalAmount: 0,
+  cartItems: localStorage.getItem("cartItems")
+  ? JSON.parse(localStorage.getItem("cartItems")): [],
 };
 
 const cartSlice = createSlice({
@@ -26,7 +28,9 @@ const cartSlice = createSlice({
           position: "bottom-left",
         });
       }
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
     },
+
     removeItem: (state, action) => {
       const itemIndex = state.cartItems.findIndex(
         (cartItem) => cartItem.id === action.payload.id
@@ -44,29 +48,43 @@ const cartSlice = createSlice({
             (cartItem) => cartItem.id !== action.payload.id
           );
           state.cartItems = nextCartItems;
-          toast.error(`!add atleast one product`,{
-            position: 'bottom-left'
-        });
+          localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+          toast.error(`!add atleast one product`, {
+            position: "bottom-left",
+          });
         }
       }
     },
 
+    clearCart(state, action) {
+      state.cartItems = [];
+      toast.error(`Cart Cleared`, {
+        position: "bottom-left",
+      });
+      localStorage.setItem("cartItems", JSON.stringify(state.cartItems))
+    },
+
     getTotals(state, action) {
-      let { quantity } = state.cartItems.reduce(
+      let { total, quantity } = state.cartItems.reduce(
         (cartTotal, cartItem) => {
-          const { cartQuantity } = cartItem;
+          const { pricePerServing, cartQuantity } = cartItem;
+          const itemTotal = pricePerServing * cartQuantity;
+
+          cartTotal.total += itemTotal;
           cartTotal.quantity += cartQuantity;
 
           return cartTotal;
         },
         {
+          total: 0,
           quantity: 0,
         }
       );
       state.cartTotalQuantity = quantity;
+      state.cartTotalAmount = total.toFixed(2);
     },
   },
 });
 
 export default cartSlice.reducer;
-export const { addItem, removeItem, getTotals } = cartSlice.actions;
+export const { addItem, removeItem,clearCart, getTotals } = cartSlice.actions;

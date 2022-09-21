@@ -11,14 +11,14 @@ const TrendingFood = () => {
 
   const n = 5; //stars hard coded.
   const [foodItem, setFoodItem] = useState([]);
-  const [indCartItem, setIndCartItem] = useState(0);
+  // const [indCartItem, setIndCartItem] = useState(0);
 
   const randomTrendingFood = async () => {
     const check = localStorage.getItem("trending");
 
     if (check) {
       setFoodItem(JSON.parse(check));
-      console.log(check);
+      // console.log(check);
     } else {
       const response = await Axios.get(
         `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}`
@@ -32,18 +32,17 @@ const TrendingFood = () => {
   // const orderQuantity = useSelector((state) => state.cart.numOfOrders);
 
   // const itemsInCart = useSelector((state)=>state.cart.cartItems[0].cartQuantity)
-  const itemsInCart = useSelector((state) => state.cart.cartItems);
+  // const itemsInCart = useSelector((state) => state.cart.cartItems);
 
-  useEffect(() => {
-    itemsInCart.forEach((item) => {
-      console.log(item.id);
-      if (item.id === foodItem[0].id) {
-        setIndCartItem(item.cartQuantity);
-      } else {
-        setIndCartItem(0);
-      }
-    });
-  });
+  // useEffect(() => {
+  //   itemsInCart.forEach((item) => {
+  //     if (item.id === foodItem[0].id) {
+  //       setIndCartItem(item.cartQuantity);
+  //     } else {
+  //       setIndCartItem(0);
+  //     }
+  //   });
+  // },[]);
 
   useEffect(() => {
     randomTrendingFood();
@@ -55,6 +54,18 @@ const TrendingFood = () => {
 
   const handleRemoveFromCart = (removedItem) => {
     dispatch(removeItem(removedItem));
+  };
+
+  const itemsInCart = useSelector((state) => state.cart.cartItems);
+
+  const renderButton = (item) => {
+    let value = 0;
+    itemsInCart.forEach((foodItem) => {
+      if (foodItem.id === item.id) {
+        value = foodItem.cartQuantity;
+      }
+    });
+    return <>{value === 0 ? <span className="text-dark itemQuantityText">Add</span> : <span className="text-dark itemQuantityText">{value}</span>}</>;
   };
 
   return (
@@ -108,8 +119,9 @@ const TrendingFood = () => {
                           -
                         </button>
                         <button type="button" className="btn btn-light">
-                          {indCartItem}
+                        {renderButton(foodItem[0])}
                         </button>
+                        
                         <button
                           type="button"
                           className="btn btn-primary"
