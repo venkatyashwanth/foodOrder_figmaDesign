@@ -13,13 +13,13 @@ import { getTotals } from "../../features/addToCart/cartSlice";
 const NavigationBar = () => {
   const [activeTab, setActiveTab] = useState("link1");
   const dispatch = useDispatch();
-  // const cart = useSelector((state) => state.cart);
+  const cart = useSelector((state) => state.cart);
 
   const orderQuantity = useSelector((state) => state.cart.cartTotalQuantity);
 
   useEffect(() => {
     dispatch(getTotals());
-  });
+  },[cart]);
 
   const activeClassLink1 = activeTab === "link1" ? "active" : "";
   const activeClassLink2 = activeTab === "link2" ? "active" : "";

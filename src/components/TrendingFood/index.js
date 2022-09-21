@@ -60,69 +60,71 @@ const TrendingFood = () => {
   return (
     <>
       <Container fluid>
-        <Row>
-          <Col xs={12}>
-            <h2 className="headingText">Todays Trending Food</h2>
-          </Col>
-          {/* <Col xs={12}>
+        <section className="whiteSpaceCtrl">
+          <Row>
+            <Col xs={12}>
+              <h2 className="headingText">Todays Trending Food</h2>
+            </Col>
+            {/* <Col xs={12}>
             
           </Col> */}
-        </Row>
-        <Row>
+          </Row>
+          <Row>
             {foodItem.length === 0 ? (
               ""
             ) : (
               <Col>
-              <div className="d-flex flex-column flex-lg-row">
-                <div className="foodImageContainer">
-                  <img src={foodItem[0].image} alt="food" />
-                </div>
+                <div className="d-flex flex-column flex-lg-row">
+                  <div className="foodImageContainer">
+                    <img src={foodItem[0].image} alt="food" />
+                  </div>
 
-                <div className="trendingContainer">
-                  <div>
-                    <h3>{foodItem[0].title}</h3>
-                    <p>${foodItem[0].pricePerServing}</p>
+                  <div className="trendingContainer">
                     <div>
-                      {[...Array(n)].map((e, i) => (
-                        <img
-                          key={i}
-                          src="./media/ratingstar.png"
-                          alt="s"
-                          style={{ width: "21px", paddingLeft: "4px" }}
-                        />
-                      ))}
+                      <h3>{foodItem[0].title}</h3>
+                      <p>${foodItem[0].pricePerServing}</p>
+                      <div>
+                        {[...Array(n)].map((e, i) => (
+                          <img
+                            key={i}
+                            src="./media/ratingstar.png"
+                            alt="s"
+                            style={{ width: "21px", paddingLeft: "4px" }}
+                          />
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div>
-                    <span className="d-inline-block me-3">
-                      Select Quantity:
-                    </span>
+                    <div>
+                      <span className="d-inline-block me-3">
+                        Select Quantity:
+                      </span>
 
-                    <div className="btn-group" role="group" aria-label="...">
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => handleRemoveFromCart(foodItem[0])}
-                      >
-                        -
-                      </button>
-                      <button type="button" className="btn btn-light">
-                        {indCartItem}
-                      </button>
-                      <button
-                        type="button"
-                        className="btn btn-primary"
-                        onClick={() => handleAddToCart(foodItem[0])}
-                      >
-                        +
-                      </button>
+                      <div className="btn-group" role="group" aria-label="...">
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={() => handleRemoveFromCart(foodItem[0])}
+                        >
+                          -
+                        </button>
+                        <button type="button" className="btn btn-light">
+                          {indCartItem}
+                        </button>
+                        <button
+                          type="button"
+                          className="btn btn-primary"
+                          onClick={() => handleAddToCart(foodItem[0])}
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </Col>
             )}
-        </Row>
+          </Row>
+        </section>
       </Container>
     </>
   );

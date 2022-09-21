@@ -13,6 +13,7 @@ const LandingPage = () => {
       {/* empty space */}
       <div style={{ height: "120px" }}></div>
       {/* Hero Container Section */}
+      <section style={{width: '100vw'}}>
       <Container fluid>
         <Row>
           <Col xl={5} className="d-flex flex-column justify-content-center">
@@ -113,8 +114,8 @@ const LandingPage = () => {
             </div>
           </Col>
         </Row>
-        
       </Container>
+      </section>
 
       {/* Trending Food Section */}
       <TrendingFood />

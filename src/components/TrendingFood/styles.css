@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
 .container-fluid{
-    width: 90% !important;
+    /* width: 90% !important; */
     padding-top: 20px;
 }
 
@@ -63,4 +63,9 @@
         margin-left: 0px;
         margin-top: 10px;
     }
+}
+
+.whiteSpaceCtrl{
+    white-space: normal;
+    overflow-x: hidden;
 }
